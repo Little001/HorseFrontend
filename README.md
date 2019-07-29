@@ -1,0 +1,2 @@
+# HorseFrontend
+Angular client
