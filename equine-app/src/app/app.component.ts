@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {UserService} from "./core/services";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'equine-app';
+
+  constructor (
+    private userService: UserService
+  ) {}
+
+  ngOnInit() {
+    this.userService.populate();
+  }
 }
