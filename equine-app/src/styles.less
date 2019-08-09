@@ -3,10 +3,55 @@
 
 html, body {
   background: @backgroundColor;
-  color: @primaryFontColor;
+  color: @fontColorDark;
+  font-family: 'Blinker', sans-serif;
+}
+h1, h2, h3 {
+  font-family: 'Open Sans', sans-serif;
 }
 
-.wrapper {
+.container {
   margin: 0 auto;
-  width: 500px;
+  width: 1024px;
+}
+
+
+.navbar {
+  background: @appColor1;
+  color: @fontColorLight;
+  a {
+    color: @fontColorLight;
+  }
+  .navbar-brand {
+    img {
+      height: 65px;
+    }
+  }
+  .navbar-nav {
+    flex-direction: row;
+  }
+  .nav-item {
+    margin: 0 30px;
+  }
+}
+
+.btn-visual {
+  background-color: @appColor2;
+  border-color: @appColor2;
+  color: @fontColorLight;
+  &:hover {
+    color: @fontColorLight2;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 0;
+  background: @appColor1;
+  color: @fontColorLight;
+  a {
+    color: @fontColorLight;
+  }
 }
