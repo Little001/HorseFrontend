@@ -1,13 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/styles/deff";
 
-html, body {
+html {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-bottom: 80px;
+}
+
+body {
   background: @backgroundColor;
   color: @fontColorDark;
   font-family: 'Blinker', sans-serif;
 }
+
 h1, h2, h3 {
   font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: @appColor2;
+
+  &:hover {
+    color: darken(@appColor2, 20%);
+  }
 }
 
 .container {
@@ -15,23 +31,44 @@ h1, h2, h3 {
   width: 1024px;
 }
 
+.page {
+  padding: 25px 0;
+}
 
 .navbar {
   background: @appColor1;
   color: @fontColorLight;
+
   a {
     color: @fontColorLight;
   }
+
   .navbar-brand {
     img {
       height: 65px;
     }
   }
+
   .navbar-nav {
     flex-direction: row;
   }
-  .nav-item {
-    margin: 0 30px;
+
+  .nav-link {
+    padding: 10px 30px;
+  }
+
+  .highlight {
+    background: @fontColorLight;
+    border-radius: @border-radius;
+    font-weight: bold;
+    &:hover {
+      box-shadow: 0 0 5px @fontColorLight;
+    }
+
+    a {
+      color: @appColor1;
+    }
+
   }
 }
 
@@ -39,18 +76,20 @@ h1, h2, h3 {
   background-color: @appColor2;
   border-color: @appColor2;
   color: @fontColorLight;
+
   &:hover {
     color: @fontColorLight2;
   }
 }
 
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
   padding: 15px 0;
   background: @appColor1;
   color: @fontColorLight;
+
   a {
     color: @fontColorLight;
   }

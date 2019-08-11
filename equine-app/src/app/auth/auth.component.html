@@ -18,13 +18,12 @@
                 class="form-control form-control-lg"
                 type="text" />
             </fieldset>
-            <fieldset class="form-group">
+            <fieldset class="form-group" *ngIf="authType == 'register'">
               <input
                 formControlName="email"
                 placeholder="Email"
                 class="form-control form-control-lg"
-                type="text"
-                *ngIf="authType == 'register'" />
+                type="text" />
             </fieldset>
             <fieldset class="form-group">
               <input
@@ -32,6 +31,19 @@
                 placeholder="Password"
                 class="form-control form-control-lg"
                 type="password" />
+            </fieldset>
+            <fieldset class="form-group" *ngIf="authType == 'login'">
+              <div class="form-check" >
+                <input
+                  id="remember"
+                  formControlName="remember"
+                  placeholder="remember"
+                  class="form-check-input"
+                  type="checkbox" />
+                <label class="form-check-label" for="remember">
+                  Remember me
+                </label>
+              </div>
             </fieldset>
             <button class="btn btn-lg btn-visual pull-xs-right" [disabled]="!authForm.valid" type="submit">
               {{ title }}

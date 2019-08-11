@@ -4,7 +4,7 @@ import { Observable ,  BehaviorSubject ,  ReplaySubject } from 'rxjs';
 
 import { ApiService } from './api.service';
 import { JwtService } from './jwt.service';
-import { User } from '../models';
+import {User, UserLogin} from '../models';
 import { map ,  distinctUntilChanged } from 'rxjs/operators';
 
 
@@ -27,9 +27,14 @@ export class UserService {
   populate() {
     // If JWT detected, attempt to get & store user's info
     if (this.jwtService.getToken()) {
-      this.apiService.get('/user')
+      this.apiService.post('/user/checkToken', {token: this.jwtService.getToken()})
       .subscribe(
-        data => this.setAuth(data.user),
+        data => {
+          // Set current user data into observable
+          this.currentUserSubject.next(data);
+          // Set isAuthenticated to true
+          this.isAuthenticatedSubject.next(true);
+        },
         err => this.purgeAuth()
       );
     } else {
@@ -38,13 +43,10 @@ export class UserService {
     }
   }
 
-  setAuth(user: User) {
+  setAuth(user: UserLogin) {
     // Save JWT sent from server in localstorage
-    this.jwtService.saveToken(user.token);
-    // Set current user data into observable
-    this.currentUserSubject.next(user);
-    // Set isAuthenticated to true
-    this.isAuthenticatedSubject.next(true);
+    this.jwtService.saveData(user);
+    this.populate();
   }
 
   purgeAuth() {
@@ -61,7 +63,7 @@ export class UserService {
     return this.apiService.post('/user' + route, {
       username: credentials.username,
       password: credentials.password,
-      permanent: false
+      permanent: Boolean(credentials.remember)
     })
       .pipe(map(
       data => {
