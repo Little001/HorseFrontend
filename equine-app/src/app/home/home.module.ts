@@ -5,17 +5,20 @@ import { HomeComponent } from './home.component';
 import { HomeAuthResolver } from './home-auth-resolver.service';
 import { SharedModule } from '../shared';
 import { HomeRoutingModule } from './home-routing.module';
+import {NgbCarouselConfig, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   imports: [
     SharedModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    NgbModule
   ],
   declarations: [
     HomeComponent
   ],
   providers: [
-    HomeAuthResolver
+    HomeAuthResolver,
+    NgbCarouselConfig
   ]
 })
 export class HomeModule {}
