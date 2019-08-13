@@ -58,34 +58,26 @@ export class UserService {
     this.isAuthenticatedSubject.next(false);
   }
 
-  attemptAuth(type, credentials): Observable<User> {
-    if (type === 'login') {
-      return this.apiService.post('/user/login', {
-        username: credentials.username,
-        password: credentials.password,
-        permanent: Boolean(credentials.remember)
-      })
-        .pipe(map(
-          data => {
-            this.setAuth(data);
-            return data;
-          }
-        ));
-    } else {
-      return this.apiService.post('/user/registration', {
-        email: credentials.email,
-        username: credentials.username,
-        password: credentials.password
-      })
-        .pipe(map(
-          data => {
-            console.log(data);
-            //todo: login probably?
-            return data;
-          }
-        ));
+  attemptAuth(credentials): Observable<UserLogin> {
+    return this.apiService.post('/user/login', {
+      email: credentials.email,
+      password: credentials.password,
+      permanent: Boolean(credentials.remember)
+    })
+      .pipe(map(
+        data => {
+          this.setAuth(data);
+          return data;
+        }
+      ));
+  }
 
-    }
+  attempRegister(credentials) {
+    return this.apiService.post('/user/registration', {
+      email: credentials.email,
+      username: credentials.username,
+      password: credentials.password
+    });
   }
 
   getCurrentUser(): User {

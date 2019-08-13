@@ -23,7 +23,7 @@ export class AuthComponent implements OnInit {
   ) {
     // use FormBuilder to create a form group
     this.authForm = this.fb.group({
-      'username': ['', Validators.required],
+      'email': ['', Validators.email],
       'password': ['', Validators.required]
     });
   }
@@ -39,7 +39,7 @@ export class AuthComponent implements OnInit {
       this.title = (this.authType === 'login') ? 'Sign in' : 'Sign up';
       // add form control for username if this is the register page
       if (this.authType === 'register') {
-        this.authForm.addControl('email', new FormControl());
+        this.authForm.addControl('username', new FormControl());
       } else {
         this.authForm.addControl('remember', new FormControl());
       }
@@ -54,16 +54,37 @@ export class AuthComponent implements OnInit {
   submitForm() {
     this.isSubmitting = true;
     this.errors = {errors: {}};
-
     const credentials = this.authForm.value;
+    if (this.authType === 'login') {
+      this.submitLogin(credentials);
+    } else {
+      this.submitRegister(credentials);
+    }
+  }
+
+  private submitLogin(credentials) {
     this.userService
-    .attemptAuth(this.authType, credentials)
-    .subscribe(
-      data => this.router.navigateByUrl('/'),
-      err => {
-        this.errors = err;
-        this.isSubmitting = false;
-      }
-    );
+      .attemptAuth(credentials)
+      .subscribe(
+        data => this.router.navigateByUrl('/'),
+        err => {
+          this.errors = err;
+          this.isSubmitting = false;
+        }
+      );
+  }
+
+  private submitRegister(credentials) {
+    this.userService
+      .attempRegister(credentials)
+      .subscribe(
+        data => {
+          this.submitLogin(credentials);
+        },
+        err => {
+          this.errors = err;
+          this.isSubmitting = false;
+        }
+      );
   }
 }
