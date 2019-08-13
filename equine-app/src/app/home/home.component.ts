@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import * as icons from '@fortawesome/free-solid-svg-icons';
 
 import { UserService } from '../core';
 
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit {
   ) {}
 
   isAuthenticated: boolean;
+  icons = icons;
 
   ngOnInit() {
     this.config.showNavigationArrows = false;

@@ -13,8 +13,48 @@
   </ngb-carousel>
 
   <div class="container page">
-    <div class="row">
-      <i class="icon-home"></i>
+    <div class="row infos pt-4">
+      <div class="col-md-2 text-center pt-5">
+        <fa-icon [icon]="icons.faInfo" size="3x"></fa-icon>
+      </div>
+      <div class="col-md-10">
+        <ul class="list-group">
+          <li class="list-group-item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+          <li class="list-group-item">Etiam neque. Curabitur sagittis hendrerit ante.</li>
+          <li class="list-group-item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+          <li class="list-group-item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Etiam neque. Curabitur sagittis hendrerit ante. Etiam neque. Curabitur sagittis hendrerit ante.</li>
+        </ul>
+      </div>
+      <div class="col-md-10 pt-5">
+        <ul class="list-group">
+          <li class="list-group-item">Lorem ipsum dolor sit amet, consectetuer adipiscing elit?</li>
+          <li class="list-group-item">Etiam neque. Curabitur sagittis hendrerit ante?</li>
+        </ul>
+      </div>
+      <div class="col-md-2 text-center pt-5">
+        <fa-icon [icon]="icons.faQuestion" size="3x"></fa-icon>
+      </div>
+      <div class="col-md-12 text-center pt-5">
+        <a class="btn btn-big btn-visual"
+           routerLink="/register"
+           routerLinkActive="active">
+          Sign up Now!
+        </a>
+      </div>
+    </div>
+    <hr>
+    <div class="articles pt-4">
+      <h2>Články</h2>
+      <p>
+        ...
+      </p>
+    </div>
+    <hr>
+    <div class="articles pt-4">
+      <h2>Eshop</h2>
+      <p>
+        ...
+      </p>
     </div>
   </div>
 </div>
