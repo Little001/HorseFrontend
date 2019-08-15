@@ -3,8 +3,8 @@
     <div class="row">
 
       <div class="col-md-6 offset-md-3 col-xs-12">
-        <h1 class="text-xs-center">{{ title }}</h1>
-        <p class="text-xs-center">
+        <h1>{{ title }}</h1>
+        <p class="text-center">
           <a [routerLink]="['/login']" *ngIf="authType == 'register'">Have an account?</a>
           <a [routerLink]="['/register']" *ngIf="authType == 'login'">Need an account?</a>
         </p>
@@ -45,9 +45,11 @@
                 </label>
               </div>
             </fieldset>
-            <button class="btn btn-lg btn-visual pull-xs-right" [disabled]="!authForm.valid" type="submit">
-              {{ title }}
-            </button>
+            <div class="text-center pt-3">
+              <button class="btn btn-big btn-visual pull-xs-right" [disabled]="!authForm.valid" type="submit">
+                {{ title }}
+              </button>
+            </div>
           </fieldset>
         </form>
       </div>

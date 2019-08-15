@@ -15,7 +15,7 @@
   <div class="container page">
     <div class="row infos pt-4">
       <div class="col-md-2 text-center pt-5">
-        <fa-icon [icon]="icons.faInfo" size="3x"></fa-icon>
+        <fa-icon [icon]="icons.faInfo" size="4x"></fa-icon>
       </div>
       <div class="col-md-10">
         <ul class="list-group">
@@ -32,7 +32,7 @@
         </ul>
       </div>
       <div class="col-md-2 text-center pt-5">
-        <fa-icon [icon]="icons.faQuestion" size="3x"></fa-icon>
+        <fa-icon [icon]="icons.faQuestion" size="4x"></fa-icon>
       </div>
       <div class="col-md-12 text-center pt-5">
         <a class="btn btn-big btn-visual"
@@ -42,19 +42,54 @@
         </a>
       </div>
     </div>
-    <hr>
-    <div class="articles pt-4">
-      <h2>Články</h2>
-      <p>
-        ...
-      </p>
+  </div>
+
+  <div class="separator before"></div>
+  <div class="dark-part articles">
+    <div class="container">
+        <h2>Články</h2>
+        <section class="row">
+          <div class="col-md-4">
+            <article></article>
+          </div>
+          <div class="col-md-4">
+            <article></article>
+          </div>
+          <div class="col-md-4">
+            <article></article>
+          </div>
+        </section>
+      <div class="text-center pt-5 pb-3">
+        <a class="btn btn-big btn-visual"
+           routerLink="/register"
+           routerLinkActive="active">
+          Show all Posts
+        </a>
+      </div>
     </div>
-    <hr>
+  </div>
+  <div class="separator after"></div>
+  <div class="container page">
     <div class="articles pt-4">
-      <h2>Eshop</h2>
-      <p>
-        ...
-      </p>
+      <h2>E-shop</h2>
+      <section class="row">
+        <div class="col-md-4">
+          <article></article>
+        </div>
+        <div class="col-md-4">
+          <article></article>
+        </div>
+        <div class="col-md-4">
+          <article></article>
+        </div>
+      </section>
+      <div class="text-center pt-5 pb-3">
+        <a class="btn btn-big btn-visual"
+           routerLink="/register"
+           routerLinkActive="active">
+          Open E-shop
+        </a>
+      </div>
     </div>
   </div>
 </div>

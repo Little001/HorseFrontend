@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "assets/styles/deff";
+@import "assets/styles/articles";
 
 html {
   position: relative;
@@ -15,7 +16,27 @@ body {
 }
 
 h1, h2, h3 {
-  //font-family: 'Open Sans', sans-serif;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  color: @appColor1;
+  text-transform: uppercase;
+}
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 2.7rem;
+  margin-bottom: 1.7rem;
+}
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  font-family: 'Varela Round', sans-serif;
 }
 
 a {
@@ -40,7 +61,7 @@ a {
 }
 
 .navbar {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   height: @headerHeight;
@@ -66,6 +87,7 @@ a {
 
   .nav-link {
     padding: 10px 30px;
+    font-family: 'Varela Round', sans-serif;
   }
 
   .highlight {
@@ -99,10 +121,27 @@ a {
 }
 
 .btn-big {
-  padding: .7rem 3rem;
+  padding: .5rem 3rem;
   font-size: 1.5rem;
-  line-height: 1.8;
-  border-radius: .3rem;
+  line-height: 1.6;
+  border-radius: @border-radius;
+}
+
+.dark-part {
+  background: @backgroundColor2;
+}
+.separator {
+  width: 100%;
+  height: 170px;
+  margin: -20px 0;
+  &.before {
+    background: url("assets/images/hfc1.svg") bottom;
+    background-size: cover;
+  }
+  &.after {
+    background: url("assets/images/hfc2.svg") 0 -2px;
+    background-size: cover;
+  }
 }
 
 .home-page {
@@ -113,8 +152,8 @@ a {
       padding-top: 25px;
       border-radius: 50%;
       background: @appColor1;
-      width: 100px;
-      height: 100px;
+      width: 115px;
+      height: 115px;
       text-align: center;
     }
   }
