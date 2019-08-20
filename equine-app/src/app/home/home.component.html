@@ -49,19 +49,13 @@
     <div class="container">
         <h2>Články</h2>
         <section class="row">
-          <div class="col-md-4">
-            <article></article>
-          </div>
-          <div class="col-md-4">
-            <article></article>
-          </div>
-          <div class="col-md-4">
-            <article></article>
+          <div *ngFor="let article of articles" class="col-md-4">
+            <app-article-thumbnail [title]="article.title" [id]="article.id"></app-article-thumbnail>
           </div>
         </section>
       <div class="text-center pt-5 pb-3">
         <a class="btn btn-big btn-visual"
-           routerLink="/register"
+           routerLink="/articles"
            routerLinkActive="active">
           Show all Posts
         </a>
@@ -69,8 +63,8 @@
     </div>
   </div>
   <div class="separator after"></div>
-  <div class="container page">
-    <div class="articles pt-4">
+  <div class="container">
+    <div class="articles">
       <h2>E-shop</h2>
       <section class="row">
         <div class="col-md-4">

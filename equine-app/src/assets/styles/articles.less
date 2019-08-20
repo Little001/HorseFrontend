@@ -1,5 +1,67 @@
-article {
-  border: 3px dashed @appColor2;
-  border-radius: @border-radius;
-  height: 175px;
+article.thumbnail {
+  text-align: center;
+  cursor: pointer;
+  * {
+    text-decoration: none;
+  }
+  &:hover {
+    label {
+      text-decoration: underline;
+    }
+  }
+  .image {
+    border: 3px dashed @appColor2;
+    border-radius: @border-radius;
+    height: 175px;
+    background: @backgroundColor;
+  }
+  label {
+    margin: 13px 0;
+    font-size: 24px;
+    color: @appColor2;
+    cursor: pointer;
+    .ellipsis;
+  }
+}
+
+article.preview {
+  margin: 50px 0;
+  cursor: pointer;
+  * {
+    text-decoration: none;
+  }
+  &:hover {
+    label {
+      text-decoration: underline;
+    }
+  }
+
+  .image {
+    border: 3px dashed @appColor2;
+    border-radius: @border-radius;
+    height: 175px;
+    background: @backgroundColor2;
+  }
+  .content {
+    padding-left: 35px;
+  }
+  label {
+    margin: 0;
+    font-size: 26px;
+    color: @appColor2;
+    cursor: pointer;
+    .ellipsis;
+  }
+  .info {
+    margin-bottom: 10px;
+    font-size: 17px;
+    color: @appColor1;
+  }
+  p {
+    color: @fontColorMiddle;
+    max-height: 88px;
+    overflow: hidden;
+    line-height: 1.8;
+    margin: 0;
+  }
 }

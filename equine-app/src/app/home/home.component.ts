@@ -18,6 +18,11 @@ export class HomeComponent implements OnInit {
 
   isAuthenticated: boolean;
   icons = icons;
+  articles = [
+    {title: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit.", id: 1},
+    {title: "Consectetuer adipiscing elit.", id: 2},
+    {title: "Lorem ipsum dolor sit amet.", id: 3}
+  ];
 
   ngOnInit() {
     this.config.showNavigationArrows = false;

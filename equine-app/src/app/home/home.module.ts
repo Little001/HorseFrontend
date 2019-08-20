@@ -7,6 +7,9 @@ import { SharedModule } from '../shared';
 import { HomeRoutingModule } from './home-routing.module';
 import {NgbCarouselConfig, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
+import { ArticleThumbnailComponent } from "../shared/article";
+import {ArticlesComponent} from "./articles.component";
+import {ArticlePreviewComponent} from "../shared/article/preview";
 
 @NgModule({
   imports: [
@@ -16,7 +19,10 @@ import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
     FontAwesomeModule
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ArticlesComponent,
+    ArticleThumbnailComponent,
+    ArticlePreviewComponent
   ],
   providers: [
     HomeAuthResolver,

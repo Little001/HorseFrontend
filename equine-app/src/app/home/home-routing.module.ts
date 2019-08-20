@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { HomeAuthResolver } from './home-auth-resolver.service';
+import { ArticlesComponent } from "./articles.component";
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
     resolve: {
       isAuthenticated: HomeAuthResolver
     }
+  },
+  {
+    path: 'articles',
+    component: ArticlesComponent
   }
 ];
 

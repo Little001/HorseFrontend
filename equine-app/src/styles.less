@@ -6,7 +6,7 @@ html {
   position: relative;
   box-sizing: border-box;
   min-height: 100vh;
-  padding-bottom: 80px;
+  padding-bottom: @footerHeight;
 }
 
 body {
@@ -139,6 +139,7 @@ a {
     background-size: cover;
   }
   &.after {
+    height: 140px;
     background: url("assets/images/hfc2.svg") 0 -2px;
     background-size: cover;
   }
